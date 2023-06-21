@@ -39,7 +39,7 @@ Select Distinct Cost_Price, Selling_Price, Supplier, Profit, Profit/Cost_Price*1
 From savitasboutique.supplier_sales
 order by Profit_Percentage DESC;
 
-###..Right Join between Two tables supplier and sales..
+####  ..Right Join between Two tables supplier and sales..
 
 Select supplier.Transaction_id, sales.Customer_Name, supplier.Date, supplier.Quantity, supplier.Retail_Price, supplier.Cost_Price, supplier.Selling_Price, supplier.Discount, supplier.Profit, supplier.Supplier, supplier.Supplier_Location
 From savitasboutique.sales
