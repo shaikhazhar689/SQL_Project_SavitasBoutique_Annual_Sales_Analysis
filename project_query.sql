@@ -6,12 +6,12 @@ Select * From savitasboutique.expenses;
 
 -- Right Join between Two tables supplier and sales
 
-Select supplier.Transaction_id, supplier.Date, customer.Customer_Name, supplier.Quantity, supplier.Tax, 
-supplier.Selling_Price, supplier.Cost_Price, supplier.Profit, supplier.Discount, supplier.Supplier_Name
-From savitasboutique.customer
-Right join savitasboutique.supplier
-On supplier.Transaction_id = customer.Transaction_id
-Order By supplier.Transaction_id ASC;
+Select A.Transaction_id, A.Date, B.Customer_Name, A.Quantity, A.Tax, 
+A.Selling_Price, A.Cost_Price, A.Profit, A.Discount, A.Supplier_Name
+From savitasboutique.customer As B
+Right join savitasboutique.supplier As A
+On A.Transaction_id = B.Transaction_id
+Order By A.Transaction_id ASC;
 
 -- Top 10 customers by Profit
 
