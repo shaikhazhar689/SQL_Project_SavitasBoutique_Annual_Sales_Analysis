@@ -4,7 +4,7 @@ Select * From savitasboutique.customer;
 
 Select * From savitasboutique.expenses;
 
--- Right Join between Two tables supplier and sales
+-- Right Join between Two tables supplier and customer
 
 Select A.Transaction_id, A.Date, B.Customer_Name, A.Quantity, A.Tax, 
 A.Selling_Price, A.Cost_Price, A.Profit, A.Discount, A.Supplier_Name
@@ -89,7 +89,7 @@ CASE
 From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
 On A.Transaction_id = B.Transaction_id;
 
--- Customers Total Profit by Profit Percentage
+-- Total Profit & Profit Percentage earn from every customer
 
 Select B.Customer_Name,  sum(A.Profit) As Total_Profit, sum(A.Profit)/sum(A.Cost_Price)*100 As Profit_Percentage
 From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
@@ -97,7 +97,7 @@ On A.Transaction_id = B.Transaction_id
 Group by B.Customer_Name
 Order by Total_Profit DESC;
 
--- Total Profit earned and Quantity purchased by every customer of specific supplier..  
+-- Total Profit earned and Quantity purchased from every customer of specific supplier..  
 
 Select  B.Customer_Name, Sum(A.Quantity) As Total_Quantity, Sum(A.Profit) AS Total_Profit 
 From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
