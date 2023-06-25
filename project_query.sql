@@ -9,7 +9,7 @@ Select * From savitasboutique.expenses;
 Select A.Transaction_id, A.Date, B.Customer_Name, A.Quantity, A.Tax, 
 A.Selling_Price, A.Cost_Price, A.Profit, A.Discount, A.Supplier_Name
 From savitasboutique.customer As B
-Right join savitasboutique.supplier As A
+Left join savitasboutique.supplier As A
 On A.Transaction_id = B.Transaction_id
 Order By A.Transaction_id ASC;
 
@@ -24,11 +24,11 @@ Limit 10;
 
 -- Top !0 most frequently visiting Customers 
 
-Select count(Distinct A.Transaction_id) As Total, B.Customer_Name
+Select B.Customer_Name As customer, count(Distinct A.Transaction_id) As num_transaction
 From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
 On A.Transaction_id = B.Transaction_id
 Group by B.Customer_Name
-Order by Total DESC
+Order by num_transaction DESC
 Limit 10;
 
 -- Top 10 Customers by Quantiy Purchased
@@ -39,6 +39,31 @@ On A.Transaction_id = B.Transaction_id
 Group by B.Customer_Name
 Order by Total_Quantity DESC
 Limit 10;
+
+-- Number of orders as per supplier
+
+Select A.Supplier_Name As suppliers, count(Distinct A.transaction_id) As num_orders
+From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+On A.Transaction_id = B.Transaction_id
+Group by Suppliers;
+
+-- Quantity Sold as per supplier
+
+Select A.Supplier_Name As suppliers, sum(A.Quantity) As sold_quantity
+From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+On A.Transaction_id = B.Transaction_id
+Group by Suppliers
+Order by sold_quantity DESC
+Limit 10;
+
+-- Quantity sold to customer of specific supplier
+
+Select A.Supplier_Name As suppliers, B.Customer_Name As customer_name, sum(A.Quantity) As sold_quantity
+From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+On A.Transaction_id = B.Transaction_id
+Group by suppliers, customer_name
+Order by sold_quantity DESC
+Limit 10; 
 
 -- Max Profit by customer in single transaction
 
@@ -122,4 +147,4 @@ From savitasboutique.supplier As A Left Join Savitasboutique.customer As B
 On A.Transaction_id = B.Transaction_id
 Where A.Cost_Price Between 15000 And 25000
 Order by Profit_Percentage DESC;
-  
+   
