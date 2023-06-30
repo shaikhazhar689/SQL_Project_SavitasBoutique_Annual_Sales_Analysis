@@ -70,16 +70,7 @@ Select A.Supplier_Name As suppliers, sum(A.Quantity) As sold_quantity, B.Custome
 From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
 On A.Transaction_id = B.Transaction_id
 Group by suppliers, Customer_name
-Order by sold_quantity DESC; 
-
--- Indiviidual Customer Preference of different products 
-
-SELECT B.Customer_Name, sum(A.Quantity) As Total_Quantity, A.Supplier_Name
-FROM savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
-On A.Transaction_id = B.Transaction_id
-Where B.Customer_Name = 'Bharti Wagh'
-GROUP BY B.Customer_Name, A.Supplier_Name
-Order by Total_Quantity DESC;
+Order by sold_quantity DESC;
 
 -- Customer preference using Having function
 
@@ -88,6 +79,15 @@ FROM savitasboutique.supplier As A Left Join Savitasboutique.customer As B
 On A.Transaction_id = B.Transaction_id
 GROUP BY B.Customer_Name, A.Supplier_Name
 Having Total_Quantity > 25
+Order by Total_Quantity DESC; 
+
+-- Indiviidual Customer Preference of different products 
+
+SELECT B.Customer_Name, sum(A.Quantity) As Total_Quantity, A.Supplier_Name
+FROM savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+On A.Transaction_id = B.Transaction_id
+Where B.Customer_Name = 'Bharti Wagh'
+GROUP BY A.Supplier_Name
 Order by Total_Quantity DESC;
 
 -- Max Profit by customer in single transaction
@@ -134,20 +134,20 @@ On A.Transaction_id = B.Transaction_id
 Where A.Cost_Price Between 15000 And 25000
 Order by Profit_Percentage DESC;
 
--- Sub Query
+-- Sub Query -- Designate performance level of supplier on the basis of Quantity sold Vs Total Quanity
 
-Select count(Distinct A.Transaction_id) As Total_orders, A.Supplier_Name As Supplier, Sum(A.Quantity) As Total_Quantity,
+Select Count(Distinct A.Transaction_id) As Transaction_ID, A.Supplier_Name As Supplier, Sum(A.Quantity) As Quantity,
   (Select
-  Count(A.Transaction_id) 
+  Sum(A.Quantity) 
  From  savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
-On A.Transaction_id = B.Transaction_id) As Total_orders,
+On A.Transaction_id = B.Transaction_id) As Total_Quantity,
  Case
-   When Count(A.Transaction_id)/ (Select Count(*) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+   When Sum(A.Quantity)/ (Select Count(*) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
 On A.Transaction_id = B.Transaction_id) <= 0.10
    Then "Poor"
-   When Count(A.Transaction_id)/ (Select Count(*) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+   When Sum(A.Quantity)/ (Select Count(*) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
 On A.Transaction_id = B.Transaction_id) > 0.10
-   And Count(A.Transaction_id)/ (Select Count(*) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+   And Sum(A.Quantity)/ (Select Count(*) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
 On A.Transaction_id = B.Transaction_id) <= 0.50
    Then "Good"
  Else "Very Good"
@@ -155,11 +155,13 @@ On A.Transaction_id = B.Transaction_id) <= 0.50
 From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
 On A.Transaction_id = B.Transaction_id
 Group by Supplier
-Order by Total_Orders DESC;
+Order by Quantity DESC;
 
--- IF Function
+-- IF Function -- Designate purchased quantity status of Customer As More or Less 
 
-SELECT A.Transaction_id, A.Quantity, 
-IF(A.Quantity>10, "MORE", "LESS") As Status
+SELECT Distinct A.Transaction_id, B.Customer_Name As Customer, A.Quantity, 
+IF (A.Quantity >5, "MORE", "LESS") As Status
 FROM savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
 On A.Transaction_id = B.Transaction_id
+Group by A.Transaction_id, Customer, A.Quantity
+Order By Quantity DESC;
