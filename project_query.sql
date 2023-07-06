@@ -9,7 +9,7 @@ Select * From savitasboutique.expenses;
 Select A.Transaction_id, A.Date, B.Customer_Name, A.Quantity, A.Tax, 
 A.Selling_Price, A.Cost_Price, A.Profit, A.Discount, A.Supplier_Name
 From savitasboutique.customer As B
-Left join savitasboutique.supplier As A
+Right join savitasboutique.supplier As A
 On A.Transaction_id = B.Transaction_id
 Order By A.Transaction_id ASC;
 
@@ -165,3 +165,32 @@ FROM savitasboutique.supplier As A Left Join Savitasboutique.customer As B
 On A.Transaction_id = B.Transaction_id
 Group by A.Transaction_id, Customer, A.Quantity
 Order By Quantity DESC;
+
+-- Sum Of Quantity of Sarees sold of different suppliers
+
+Select Sum(A.Quantity) As Quantity, A.Category, A.Supplier_Name
+From savitasboutique.customer As B
+Right join savitasboutique.supplier As A
+On A.Transaction_id = B.Transaction_id
+Where Category = 'Saree'
+Group by A.Supplier_Name
+Having Quantity >= 5
+Order by Quantity DESC;
+
+-- Customers who purchased Saree and name of supplier
+
+Select Sum(A.Quantity) As Quantity, A.Category, A.Supplier_Name, B.Customer_Name
+From savitasboutique.customer As B
+Right join savitasboutique.supplier As A
+On A.Transaction_id = B.Transaction_id
+Where A.Category = 'Saree'
+Group by B.Customer_Name, A.Supplier_Name, A.Category
+Order By Quantity DESC;
+
+-- Details of individual customer about purchase of specific Category product
+
+Select A.Quantity, A.Category, A.Supplier_Name, B.Customer_Name
+From savitasboutique.customer As B
+Right join savitasboutique.supplier As A
+On A.Transaction_id = B.Transaction_id
+Where A.Category = 'Saree' And B.Customer_Name = "Mandakini Patil";
