@@ -194,3 +194,5 @@ From savitasboutique.customer As B
 Right join savitasboutique.supplier As A
 On A.Transaction_id = B.Transaction_id
 Where A.Category = 'Saree' And B.Customer_Name = "Mandakini Patil";
+
+-- Thank You
