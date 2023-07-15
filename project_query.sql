@@ -134,24 +134,47 @@ On A.Transaction_id = B.Transaction_id
 Where A.Cost_Price Between 15000 And 25000
 Order by Profit_Percentage DESC;
 
--- Sub Query -- Designate performance level of supplier on the basis of Quantity sold Vs Total Quanity
+-- Sub Query -- Designate Demand level of supplier on the basis of Orders
 
-Select Count(Distinct A.Transaction_id) As Transaction_ID, A.Supplier_Name As Supplier, Sum(A.Quantity) As Quantity,
+Select A.Supplier_Name As Supplier, Count(Distinct A.Transaction_id) As Orders, 
+  (Select
+  Count(Distinct A.Transaction_id) 
+  From  savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+  On A.Transaction_id = B.Transaction_id) As Total_Orders,
+ Case
+   When Count(Distinct A.Transaction_id)/ (Select Count(Distinct A.Transaction_id) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+   On A.Transaction_id = B.Transaction_id) <= 0.10
+   Then "Poor"
+   When Count(Distinct A.Transaction_id)/ (Select Count(Distinct A.Transaction_id) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+   On A.Transaction_id = B.Transaction_id) > 0.10
+   And Count(Distinct A.Transaction_id)/ (Select Count(Distinct A.Transaction_id) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+   On A.Transaction_id = B.Transaction_id) <= 0.25
+   Then "Good"
+   Else "Very Good"
+   End As Demand_Level
+From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+On A.Transaction_id = B.Transaction_id
+Group by Supplier
+Order by Orders DESC;
+
+-- Performance level on the basis of Quantity
+
+Select A.Supplier_Name As Supplier, Sum(A.Quantity) As Quantity,
   (Select
   Sum(A.Quantity) 
- From  savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
-On A.Transaction_id = B.Transaction_id) As Total_Quantity,
+  From  savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+  On A.Transaction_id = B.Transaction_id) As Total_Quantity,
  Case
-   When Sum(A.Quantity)/ (Select Count(*) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
-On A.Transaction_id = B.Transaction_id) <= 0.10
+   When Sum(A.Quantity) / (Select Sum(A.Quantity) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+   On A.Transaction_id = B.Transaction_id) <= 0.10
    Then "Poor"
-   When Sum(A.Quantity)/ (Select Count(*) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
-On A.Transaction_id = B.Transaction_id) > 0.10
-   And Sum(A.Quantity)/ (Select Count(*) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
-On A.Transaction_id = B.Transaction_id) <= 0.50
+   When Sum(A.Quantity) / (Select Sum(A.Quantity) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+   On A.Transaction_id = B.Transaction_id) > 0.10
+   And Sum(A.Quantity) / (Select Sum(A.Quantity) From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+   On A.Transaction_id = B.Transaction_id) <= 0.25
    Then "Good"
- Else "Very Good"
- End As Performance_Level
+   Else "Very Good"
+   End As Performance_Level
 From savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
 On A.Transaction_id = B.Transaction_id
 Group by Supplier
@@ -165,6 +188,17 @@ FROM savitasboutique.supplier As A Left Join Savitasboutique.customer As B
 On A.Transaction_id = B.Transaction_id
 Group by A.Transaction_id, Customer, A.Quantity
 Order By Quantity DESC;
+
+-- Price Range
+
+SELECT Sum(A.Cost_Price) As Cost_Price, Sum(A.Selling_Price) As Sales, 
+Sum(A.Profit) As Profit, Sum(A.Quantity) As Quantity,
+IF (A.Cost_Price < 4000, "Low", IF(A.Cost_Price<10000, "Medium", "High")) As Price_Range, 
+Sum(A.Profit)/Sum(A.Selling_Price)*100 As Profit_Margin
+FROM savitasboutique.supplier As A Left Join Savitasboutique.customer As B 
+On A.Transaction_id = B.Transaction_id
+Group by Price_Range
+Order By Profit DESC;
 
 -- Sum Of Quantity of Sarees sold of different suppliers
 
