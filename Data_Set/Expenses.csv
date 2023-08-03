@@ -1,0 +1,223 @@
+Id,Date,Enter Name,Amount,Category Name
+1,10-03-2022,Fauzia,18000,Salery
+2,10-03-2022,Lata,15000,Salery
+3,01-04-2022,Mumbai,6500,Travel Expenses
+6,01-04-2022,Food,1500,Eatery
+8,01-04-2022,Misl.,16500,Miscellaneous
+11,10-04-2022,Fauzia,18000,Salery
+12,10-04-2022,Lata,15000,Salery
+13,10-05-2022,Fauzia,18000,Salery
+14,10-05-2022,Lata,15000,Salery
+15,10-03-2022,Ahmad,20000,Salery
+16,10-03-2022,Sabir,20000,Salery
+17,10-03-2022,Athik,20000,Salery
+18,10-03-2022,Aftab,18000,Salery
+19,10-03-2022,Kaif,18000,Salery
+20,10-03-2022,Kalam,18000,Salery
+21,10-03-2022,Anwar,15000,Salery
+22,10-04-2022,Ahmad,20000,Salery
+23,10-04-2022,Sabir,20000,Salery
+24,10-04-2022,Athik,20000,Salery
+25,10-04-2022,Aftab,18000,Salery
+26,10-04-2022,Kalam,18000,Salery
+27,10-04-2022,Kaif,18000,Salery
+28,10-04-2022,Anwar,15000,Salery
+29,10-05-2022,Ahmad,20000,Salery
+30,10-05-2022,Sabir,20000,Salery
+31,10-05-2022,Athik,20000,Salery
+32,10-05-2022,Kaif,18000,Salery
+33,10-05-2022,Aftab,18000,Salery
+34,10-05-2022,Kalam,18000,Salery
+35,10-05-2022,Anwar,15000,Salery
+36,15-03-2022,Mumbai,20000,Travel Expenses
+37,15-03-2022,Tailoring Material,20000,Tailoring Material
+38,15-05-2022,Mumbai,20000,Travel Expenses
+39,15-05-2022,Tailoring Material,20000,Tailoring Material
+40,15-04-2022,Tailoring Material,9500,Tailoring Material
+41,10-06-2022,Lata,15000,Salery
+42,10-06-2022,Fauzia,18000,Salery
+43,10-06-2022,Ahmad,18500,Salery
+44,10-06-2022,Sabir,21700,Salery
+45,10-06-2022,Athik,20900,Salery
+46,10-06-2022,Aftab,18600,Salery
+47,10-06-2022,Kaif,20200,Salery
+48,10-06-2022,Kalam,18800,Salery
+49,10-06-2022,Anwar,15500,Salery
+50,20-06-2022,Mumbai,25000,Travel Expenses
+51,20-06-2022,Tailoring Material,16000,Tailoring Material
+52,25-06-2022,Varanasi,45000,Travel Expenses
+53,30-03-2022,Food,2800,Eatery
+54,30-05-2022,Food,2450,Eatery
+57,30-06-2022,Food,3500,Eatery
+58,10-07-2022,Lata,15000,Salery
+59,10-07-2022,Fauzia,18000,Salery
+60,10-07-2022,Ahmad,23000,Salery
+61,10-07-2022,Sabir,21600,Salery
+63,10-07-2022,Kalam,19400,Salery
+64,10-07-2022,Aftab,18800,Salery
+65,10-07-2022,Athik,19200,Salery
+66,10-07-2022,Anwar,16000,Salery
+67,10-07-2022,Kaif,16900,Salery
+68,22-07-2022,Mumbai,22000,Travel Expenses
+69,12-07-2022,Ahmdabad,65000,Travel Expenses
+70,30-07-2022,Food,2700,Eatery
+71,18-07-2022,Tailoring Material,18500,Tailoring Material
+72,15-07-2022,Electricity,8500,Electricity
+73,15-06-2022,Electricity,8700,Electricity
+74,15-05-2022,Electricity,8900,Electricity
+75,15-04-2022,Electricity,9200,Electricity
+76,15-03-2022,Electricity,7500,Electricity
+77,10-08-2022,Fauzia,18000,Salery
+78,10-08-2022,Lata,15000,Salery
+79,10-08-2022,Ahmad,19500,Salery
+80,10-08-2022,Aftab,17500,Salery
+81,10-08-2022,Athik,20600,Salery
+82,10-08-2022,Sabir,20000,Salery
+83,10-08-2022,Kaif,16000,Salery
+84,10-08-2022,Kalam,18000,Salery
+85,10-08-2022,Anwar,15500,Salery
+86,15-08-2022,Electricity,7800,Electricity
+87,18-08-2022,Tailoring Material,12500,Tailoring Material
+88,30-08-2022,Food,3200,Eatery
+89,21-08-2022,Mumbai,17500,Travel Expenses
+90,25-08-2022,Misl.,5000,Miscellaneous
+91,10-09-2022,Lata,15000,Salery
+92,10-09-2022,Fauzia,18000,Salery
+93,12-09-2022,Ahmad,19900,Salery
+94,12-09-2022,Aftab,17600,Salery
+95,13-09-2022,Athik,18500,Salery
+96,12-09-2022,Anwar,15000,Salery
+97,14-09-2022,Kaif,14500,Salery
+98,15-09-2022,Kalam,14500,Salery
+99,18-09-2022,Sabir,17500,Salery
+101,18-09-2022,Electricity,6800,Electricity
+102,15-09-2022,Tailoring Material,12000,Tailoring Material
+103,16-09-2022,Mumbai,17500,Travel Expenses
+104,30-09-2022,Food,4000,Eatery
+105,30-09-2022,Misl.,11000,Miscellaneous
+106,08-10-2022,Fauzia,18000,Salery
+107,10-10-2022,Lata,15000,Salery
+108,09-10-2022,Ashwini,8000,Salery
+109,14-10-2022,Ahmad,20500,Salery
+110,15-10-2022,Sabir,18500,Salery
+111,15-10-2022,Aftab,17400,Salery
+112,15-10-2022,Anwar,15500,Salery
+113,14-10-2022,Kaif,14000,Salery
+114,19-10-2022,Kalam,16500,Salery
+115,16-10-2022,Athik,19900,Salery
+116,05-10-2022,Misl.,12500,Miscellaneous
+117,15-10-2022,Varanasi,55000,Travel Expenses
+118,20-10-2022,Mumbai,16500,Travel Expenses
+119,16-10-2022,Tailoring Material,15000,Tailoring Material
+120,28-10-2022,Food,5500,Eatery
+121,18-10-2022,Electricity,7500,Electricity
+122,08-11-2022,Ashwini,8000,Salery
+123,11-11-2022,Fauzia,18000,Salery
+124,12-11-2022,Lata,15000,Salery
+125,14-11-2022,Ahmad,24000,Salery
+126,15-11-2022,Sabir,22000,Salery
+127,15-11-2022,Aftab,19500,Salery
+128,16-11-2022,Anwar,20000,Salery
+129,15-11-2022,Athik,25000,Salery
+130,16-11-2022,Kaif,18600,Salery
+131,16-11-2022,Kalam,20000,Salery
+132,18-11-2022,Mumbai,18500,Travel Expenses
+133,10-11-2022,Tailoring Material,20000,Tailoring Material
+135,29-11-2022,Misl.,16500,Miscellaneous
+136,22-11-2022,Lucknow,50000,Travel Expenses
+137,30-11-2022,Food,6500,Eatery
+138,29-11-2022,Electricity,8500,Electricity
+139,09-12-2022,Ashwini,8000,Salery
+140,10-12-2022,Fauzia,18000,Salery
+141,10-12-2022,Lata,15000,Salery
+142,14-12-2022,Ahmad,18500,Salery
+143,15-12-2022,Sabir,17800,Salery
+144,14-12-2022,Aftab,17000,Salery
+145,15-12-2022,Anwar,16000,Salery
+146,16-12-2022,Athik,21000,Salery
+147,15-12-2022,Kaif,16500,Salery
+148,15-11-2022,Kalam,17500,Salery
+149,20-12-2022,Tailoring Material,12000,Tailoring Material
+150,20-12-2022,Mumbai,15000,Travel Expenses
+151,29-12-2022,Food,4300,Eatery
+152,30-12-2022,Electricity,7000,Electricity
+153,28-12-2022,Misl.,8000,Miscellaneous
+154,10-01-2023,Ashwini,8000,Salery
+155,12-01-2023,Fauzia,18000,Salery
+156,11-01-2023,Lata,15000,Salery
+157,14-01-2023,Ahmdabad,17500,Travel Expenses
+158,15-01-2023,Anwar,15000,Salery
+159,15-01-2023,Aftab,15000,Salery
+160,16-01-2023,Athik,18500,Salery
+161,16-01-2023,Sabir,18500,Salery
+162,18-01-2023,Kaif,13500,Salery
+163,16-01-2023,Kalam,15400,Salery
+164,31-01-2023,Food,3800,Eatery
+165,17-01-2023,Tailoring Material,9000,Tailoring Material
+166,26-12-2022,Mumbai,14300,Travel Expenses
+167,26-01-2023,Mumbai,12500,Travel Expenses
+168,25-01-2023,Misl.,7600,Miscellaneous
+169,24-01-2023,Lucknow,45000,Travel Expenses
+170,17-01-2023,Electricity,8000,Electricity
+171,09-02-2023,Ashwini,8000,Salery
+172,14-02-2023,Lata,16000,Salery
+173,15-02-2023,Fauzia,18000,Salery
+174,15-02-2023,Ahmad,16200,Salery
+175,13-02-2023,Sabir,15300,Salery
+176,14-02-2023,Athik,18000,Salery
+177,16-02-2023,Aftab,14500,Salery
+178,16-02-2023,Anwar,15000,Salery
+179,19-02-2023,Kaif,13200,Salery
+180,17-02-2023,Kalam,15800,Salery
+181,28-02-2023,Food,2800,Eatery
+182,21-02-2023,Mumbai,11000,Travel Expenses
+183,22-02-2023,Tailoring Material,8000,Tailoring Material
+184,23-02-2023,Misl.,7600,Miscellaneous
+185,16-02-2023,Electricity,8500,Electricity
+186,10-03-2023,Pooja,7000,Salery
+187,12-03-2023,Fauzia,18000,Salery
+188,15-03-2023,Lata,16000,Salery
+189,14-06-2023,Ahmad,16500,Salery
+190,15-03-2023,Ahmad,16400,Salery
+191,14-03-2023,Aftab,14800,Salery
+192,14-03-2023,Athik,17300,Salery
+193,16-03-2023,Sabir,15800,Salery
+194,16-03-2023,Anwar,15000,Salery
+195,18-03-2023,Kalam,12800,Salery
+196,16-03-2023,Kaif,12500,Salery
+197,31-03-2023,Food,4000,Eatery
+198,21-03-2023,Mumbai,10500,Travel Expenses
+199,20-03-2023,Tailoring Material,8700,Tailoring Material
+200,20-03-2023,Misl.,6800,Miscellaneous
+201,28-03-2023,Electricity,9000,Electricity
+202,10-04-2023,Pooja,8000,Salery
+203,12-04-2023,Fauzia,18000,Salery
+204,12-04-2023,Lata,16000,Salery
+205,12-04-2023,Ahmad,14500,Salery
+206,16-04-2023,Athik,15500,Salery
+207,13-04-2023,Anwar,15500,Salery
+208,18-04-2023,Aftab,12700,Salery
+209,19-04-2023,Sabir,13200,Salery
+210,16-04-2023,Kaif,10500,Salery
+211,18-04-2023,Kalam,12700,Salery
+212,20-04-2023,Tailoring Material,9500,Tailoring Material
+213,21-04-2023,Mumbai,11000,Travel Expenses
+215,28-04-2023,Food,2800,Eatery
+217,25-04-2023,Misl.,5500,Miscellaneous
+218,18-04-2023,Electricity,9200,Electricity
+219,08-05-2023,Pooja,7000,Salery
+220,12-05-2023,Fauzia,18000,Salery
+221,16-05-2023,Lata,16000,Salery
+222,15-05-2023,Ahmad,13500,Salery
+223,15-05-2023,Sabir,13500,Salery
+224,15-05-2023,Anwar,15000,Salery
+225,16-05-2023,Aftab,11800,Salery
+226,16-05-2023,Athik,16000,Salery
+227,18-05-2023,Kalam,10800,Salery
+228,15-05-2023,Kaif,9500,Salery
+230,10-05-2023,Chandigarh,80000,Travel Expenses
+231,30-05-2023,Food,1800,Eatery
+232,19-06-2023,Tailoring Material,12500,Tailoring Material
+233,24-05-2023,Electricity,10500,Electricity
+234,21-05-2023,Tailoring Material,12500,Tailoring Material
+235,28-05-2023,Misl.,6000,Miscellaneous
