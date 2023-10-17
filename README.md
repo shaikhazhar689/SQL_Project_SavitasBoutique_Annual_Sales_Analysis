@@ -4,7 +4,7 @@
 ## Task
 The stakeholder of Savita's Boutique has requested an annual sales analysis to aid in future decision-making for business growth and development. Using MySQL, the available data has been analyzed, and a set of queries has been created to answer various questions posed by the stakeholders. These queries provide valuable insights and findings that can guide the stakeholders in understanding their sales patterns and trends. The analysis aims to support informed decision-making and suggests a way forward for achieving greater business growth and development. 
 
-### Key Findings:
+### Key Findings
 
 #### Customer Categorization:
 ***High Priority Customers:*** Identified customers who shop frequently and make high-value purchases, presenting them as high-priority targets for personalized engagement and loyalty.
